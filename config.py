@@ -1,13 +1,16 @@
-from pathlib import Path
+from dotenv import load_dotenv
+import os
 import mysql.connector
-from decouple import config
 
-class repositorio():
+load_dotenv()  # Carrega variáveis do .env
+
+class repositorio:
     mydb = mysql.connector.connect(
-            host=config("host"),
-            user=config("user"),
-            password=config("password"),
-            database=config("database"),
-    )  # Conexão com dados do banco de dados e MySQL
+        host=os.getenv("host"),
+        user=os.getenv("user"),
+        password=os.getenv("password"),
+        database=os.getenv("database")
+    )
     mysqlcursor = mydb.cursor()
+
     
