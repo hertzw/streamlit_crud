@@ -1,5 +1,5 @@
 import streamlit as st
-from .config import repositorio 
+from config import repositorio 
 import pandas as pd
 
 
