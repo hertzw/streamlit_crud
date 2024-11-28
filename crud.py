@@ -1,6 +1,12 @@
+import os
 import streamlit as st
 from config import repositorio 
 import pandas as pd
+
+from dotenv import load_dotenv
+
+load_dotenv() 
+host = os.getenv('host')
 
 
 repositorio()
